@@ -18,7 +18,7 @@ class CreateBankBranchesTable extends Migration
             $table->unsignedInteger('bank_id');
             $table->string('branch');
             $table->string('lon_lat');
-            $table->string('ATM');
+            $table->string('ATM')->nullable();
             $table->timestamps();
         });
     }

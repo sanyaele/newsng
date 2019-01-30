@@ -16,11 +16,12 @@ class CreateBanksTable extends Migration
         Schema::create('banks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('ussd');
-            $table->string('website');
-            $table->string('other_websites');
-            $table->string('phone_numbers');
-            $table->string('email_addresses');
+            $table->string('synonyms');
+            $table->string('ussd')->nullable();
+            $table->string('website')->nullable();
+            $table->string('other_websites')->nullable();
+            $table->string('phone_numbers')->nullable();
+            $table->string('email_addresses')->nullable();
             $table->string('countryTLD', 2)->default('NG');
             $table->timestamps();
         });
