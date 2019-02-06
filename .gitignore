@@ -8,6 +8,8 @@
 node_modules/
 npm-debug.log
 yarn-error.log
+access_log_*.gz
+ftp_log_*.gz
 
 # Laravel 4 specific
 bootstrap/compiled.php
