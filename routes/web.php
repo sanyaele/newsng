@@ -11,6 +11,23 @@
 |
 */
 
+// Home Page
 Route::get('/', function () {
-    return view('index');
+    return view('home');
 });
+
+// About Us
+Route::get('/about', function(){
+    return view('about');
+});
+
+// Contact Us
+Route::get('/contact', function(){
+    return view('contact');
+});
+
+// Stories Resources
+Route::resource('stories','StoryController');
+
+// Celebrity Controller
+Route::resource('stories','CelebrityController');
