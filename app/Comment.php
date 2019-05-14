@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Source extends Model
+class Comment extends Model
 {
     //
     public function stories()
     {
-        return $this->belongsTo(Source::class);
+        return $this->hasMany(Comment::class);
     }
 }

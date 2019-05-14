@@ -18,8 +18,10 @@ class CreateCelebritiesTable extends Migration
             $table->string('name');
             $table->string('other_names');
             $table->string('country_TLD', 2);
-            $table->string('category_id');
+            $table->integer('category_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('category_id')->reference('id')->on('categories');
         });
     }
 

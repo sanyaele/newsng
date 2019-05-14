@@ -15,17 +15,20 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('celebrity_id');
+            $table->integer('celebrity_id')->unsigned();
             $table->string('title');
             $table->string('excerpt');
             $table->string('story');
             $table->string('image');
             $table->string('video');
             $table->integer('social_score');
-            $table->string('source_id');
+            $table->integer('source_id')->unsigned();
             $table->string('source_url');
             $table->string('news_date');
             $table->timestamps();
+
+            $table->foreign('celebrity_id')->references('id')->on('celebrities');
+            $table->foreign('source_id')->references('id')->on('sources');
         });
     }
 
